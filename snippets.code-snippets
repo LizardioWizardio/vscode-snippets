@@ -1,0 +1,302 @@
+{
+	"init/get GUTimeline": {
+		"scope": "javascript",
+		"prefix": "gut",
+		"body": [
+			"\\$(\\$private)._get${1:Animation}Timeline = function ()",
+			"{",
+				"\treturn this._f${1:Animation}Timeline_gut || this._init${1:Animation}Timeline();",
+			"}",
+			"",
+			"\\$(\\$private)._init${1:Animation}Timeline = function ()",
+			"{",
+				"\t/*debug_code_block_to_be_removed_by_release_builder...*/",
+				"\tif (this._f${1:Animation}Timeline_gut)",
+				"\t{",
+					"\t\tthis.__throwException(\"Instance already exist!\", this._init${1:Animation}Timeline);",
+				"\t}",
+				"\t/*...debug_code_block_to_be_removed_by_release_builder*/",
+				"",
+				"\tvar l_gut = this._f${1:Animation}Timeline_gut = new GUTimeline();",
+				"\tl_gut.i_addEventListener(GUTimeline.i_EVENT_ANIMATION_COMPLETED, this._onAnimationCompleted.i_toEventlessHandler(this));",
+				"\tl_gut.i_callHandlerAtTime(0, this._someHandler.i_toObjectMethod(this));",
+				"",
+				"\treturn l_gut;",
+			"}"
+		],
+		"description": "Create empty GUTimeline"
+	},
+
+	"init/get GUTimeline with completion event handler": {
+		"scope": "javascript",
+		"prefix": "gute",
+		"body": [
+			"\\$(\\$private)._get${1:Animation}Timeline = function ()",
+			"{",
+				"\treturn this._f${1:Animation}Timeline_gut || this._init${1:Animation}Timeline();",
+			"}",
+			"",
+			"\\$(\\$private)._init${1:Animation}Timeline = function ()",
+			"{",
+				"\t/*debug_code_block_to_be_removed_by_release_builder...*/",
+				"\tif (this._f${1:Animation}Timeline_gut)",
+				"\t{",
+					"\t\tthis.__throwException(\"Instance already exist!\", this._init${1:Animation}Timeline);",
+				"\t}",
+				"\t/*...debug_code_block_to_be_removed_by_release_builder*/",
+				"",
+				"\tvar l_gut = this._f${1:Animation}Timeline_gut = new GUTimeline();",
+				"\tl_gut.i_addEventListener(GUTimeline.i_EVENT_ANIMATION_COMPLETED, this._onAnimationCompleted.i_toEventlessHandler(this));",
+				"\tl_gut.i_callHandlerAtTime(0, this._someHandler.i_toObjectMethod(this));",
+				"",
+				"\treturn l_gut;",
+			"}",
+			"\\$(\\$private).__onAnimationCompleted = function ()",
+			"{",
+			"\t",
+			"}"
+		],
+		"description": "Create empty GUTimeline with event listener on timeline completion"
+	},
+
+	"scale timeline animation": {
+		"scope": "javascript",
+		"prefix": "sa",
+		"body": [
+		"l_gut.i_addAnimation(${1:l_udo}, GUTimeline.i_SET_SCALE, 1,",
+			"\t[",
+				"\t\t1,",
+				"\t\t[2, 1, GUTimeline.i_EASE_IN_OUT]",
+			"\t]",
+		");",
+		],
+		"description": "Create scale animation inside GUTimeline"
+	},
+
+	"scaleX timeline animation": {
+		"scope": "javascript",
+		"prefix": "sxa",
+		"body": [
+		"l_gut.i_addAnimation(${1:l_udo}, GUTimeline.i_SET_SCALE_X, 1,",
+			"\t[",
+				"\t\t1,",
+				"\t\t[2, 1, GUTimeline.i_EASE_IN_OUT]",
+			"\t]",
+		");",
+		],
+		"description": "Create scaleX animation inside GUTimeline"
+	},
+
+	"scaleXY timeline animation": {
+		"scope": "javascript",
+		"prefix": "sxya",
+		"body": [
+		"l_gut.i_addAnimation(${1:l_udo}, GUTimeline.i_SET_SCALE_XY, [1, 2],",
+			"\t[",
+				"\t\t1,",
+				"\t\t[[2, 1], 1, GUTimeline.i_EASE_IN_OUT]",
+			"\t]",
+		");",
+		],
+		"description": "Create scaleXY animation inside GUTimeline"
+	},
+
+	"alpha timeline animation": {
+		"scope": "javascript",
+		"prefix": "aa",
+		"body": [
+		"l_gut.i_addAnimation(${1:l_udo}, GUTimeline.i_SET_ALPHA, 1,",
+			"\t[",
+				"\t\t1,",
+				"\t\t[2, 1, GUTimeline.i_EASE_IN_OUT]",
+			"\t]",
+		");",
+		],
+		"description": "Create alpha animation inside GUTimeline"
+	},
+
+	"x timeline animation": {
+		"scope": "javascript",
+		"prefix": "xa",
+		"body": [
+		"l_gut.i_addAnimation(${1:l_udo}, GUTimeline.i_SET_X, 1,",
+			"\t[",
+				"\t\t1,",
+				"\t\t[2, 1, GUTimeline.i_EASE_IN_OUT]",
+			"\t]",
+		");",
+		],
+		"description": "Create X movement animation inside GUTimeline"
+	},
+
+	"y timeline animation": {
+		"scope": "javascript",
+		"prefix": "xa",
+		"body": [
+		"l_gut.i_addAnimation(${1:l_udo}, GUTimeline.i_SET_Y, 1,",
+			"\t[",
+				"\t\t1,",
+				"\t\t[2, 1, GUTimeline.i_EASE_IN_OUT]",
+			"\t]",
+		");",
+		],
+		"description": "Create Y movement animation inside GUTimeline"
+	},
+
+	"xy timeline animation": {
+		"scope": "javascript",
+		"prefix": "xya",
+		"body": [
+		"l_gut.i_addAnimation(${1:l_udo}, GUTimeline.i_SET_XY, [1, 2],",
+			"\t[",
+				"\t\t1,",
+				"\t\t[[2, 1], 1, GUTimeline.i_EASE_IN_OUT]",
+			"\t]",
+		");",
+		],
+		"description": "Create XY movement animation inside GUTimeline"
+	},
+
+	"rotation timeline animation": {
+		"scope": "javascript",
+		"prefix": "ra",
+		"body": [
+		"l_gut.i_addAnimation(${1:l_udo}, GUTimeline.i_SET_ROTATION, Math.sin(Math.PI),",
+			"\t[",
+				"\t\t1,",
+				"\t\t[Math.sin(Math.PI * 2), 1, GUTimeline.i_EASE_IN_OUT]",
+			"\t]",
+		");",
+		],
+		"description": "Create rotation animation inside GUTimeline"
+	},
+
+	"rotation in degrees timeline animation": {
+		"scope": "javascript",
+		"prefix": "rida",
+		"body": [
+		"l_gut.i_addAnimation(${1:l_udo}, GUTimeline.i_SET_ROTATION_IN_DEGREES, 1,",
+			"\t[",
+				"\t\t1,",
+				"\t\t[2, 1, GUTimeline.i_EASE_IN_OUT]",
+			"\t]",
+		");",
+		],
+		"description": "Create rotation in degrees animation inside GUTimeline"
+	},
+
+	"bezier timeline animation": {
+		"scope": "javascript",
+		"prefix": "ba",
+		"body": [
+		"l_gut.i_addAnimation(${1:l_udo}, GUTimeline.i_BEZIER_CURVE_PROCESSING, 0,",
+			"\t[",
+				"\t\t1,",
+				"\t\t[1, 1, GUTimeline.i_EASE_IN_OUT]",
+			"\t]",
+		");",
+		],
+		"description": "Create bezier curve animation inside GUTimeline"
+	},
+
+	"init/get USimpleTimer": {
+		"scope": "javascript",
+		"prefix": "ust",
+		"body": [
+			"\\$(\\$private)._get${1:Animation}Timer = function ()",
+			"{",
+				"\treturn this._f${1:Animation}Timer_ust || this._init${1:Animation}Timer();",
+			"}",
+			"",
+			"\\$(\\$private)._init${1:Animation}Timer = function ()",
+			"{",
+				"\t/*debug_code_block_to_be_removed_by_release_builder...*/",
+				"\tif (this._f${1:Animation}Timer_ust)",
+				"\t{",
+					"\t\tthis.__throwException(\"Instance already exist!\", this._init${1:Animation}Timer);",
+				"\t}",
+				"\t/*...debug_code_block_to_be_removed_by_release_builder*/",
+				"",
+				"\tvar l_ust = this._f${1:Animation}Timer_ust = new USimpleTimer(Interval_num, TicksCount_int, OptAutoStart_bl, this.i_getCStage().i_getFrameEnteringTimer(), true);",
+				"\tl_ust.i_addEventListener(USimpleTimer.i_EVENT_COMPLETED, this._on${1:Animation}TimerCompleted.i_toEventlessHandler(this));",
+				"\tl_ust.i_addEventListener(USimpleTimer.i_EVENT_TICK, this._on${1:Animation}TimerTick.i_toEventHandler(this));",
+				"\treturn l_ust;",
+			"}",
+			"",
+			"\\$(\\$private)._on${1:Animation}TimerCompleted = function ()",
+			"{",
+				"\tconsole.log(\"on${1:Animation}TimerCompleted\")",
+			"}",
+			"",
+			"\\$(\\$private)._on${1:Animation}TimerTick = function (aEvent_ue)",
+			"{",
+				"\tconsole.log(aEvent_ue.i_getEventDispatcher().i_getElapsedTicksCount())",
+			"}"
+		],
+		"description": "Create USimpleTimer"
+	},
+
+	"init/get USimpleTween": {
+		"scope": "javascript",
+		"prefix": "ut",
+		"body": [
+			"\\$(\\$private)._get${1:Animation}Tween = function ()",
+			"{",
+				"\treturn this._f${1:Animation}Tween_ut || this._init${1:Animation}Tween();",
+			"}",
+			"",
+			"\\$(\\$private)._init${1:Animation}Tween = function ()",
+			"{",
+				"\t/*debug_code_block_to_be_removed_by_release_builder...*/",
+				"\tif (this._f${1:Animation}Tween_ut)",
+				"\t{",
+					"\t\tthis.__throwException(\"Instance already exist!\", this._init${1:Animation}Tween);",
+				"\t}",
+				"\t/*...debug_code_block_to_be_removed_by_release_builder*/",
+				"",
+				"\tvar l_ut = this._f${1:Animation}Tween_ut = new UTween(this._someReciever.i_toObjectMethod(this), UTween.i_LINEAR, 0, 1, 30 / 30, this.i_getCStage().i_getFrameEnteringTimer());",
+				"\tl_ut.i_addEventListener(UTween.i_EVENT_TWEENING_COMPLETED, this._on${1:Animation}TweenCompleted.i_toEventHandler(this));",
+				"\treturn l_ut;",
+			"}",
+			"",
+			"\\$(\\$private)._on${1:Animation}TweenCompleted = function ()",
+			"{",
+				"\tconsole.log(\"on${1:Animation}TweenCompleted\")",
+			"}"
+		],
+		"description": "Create UTween"
+	},
+
+	"init/get asset view via Uloader": {
+		"scope": "javascript",
+		"prefix": "udo",
+		"body": [
+			"\\$(\\$private)._get${1:AssetView} = function ()",
+			"{",
+				"\treturn this._f${1:AssetView}_udo || this._init${1:AssetView}()",
+			"}",
+			"",
+			"\\$(\\$private)._init${1:AssetView} = function ()",
+			"{",
+				"\t/*debug_code_block_to_be_removed_by_release_builder...*/",
+				"\tif (this._f${1:AssetView}_udo)",
+				"\t{",
+					"\t\tthis.__throwException(\"Instance already exist!\", this._init${1:AssetView});",
+				"\t}",
+				"\t/*...debug_code_block_to_be_removed_by_release_builder*/",
+				"",
+				"\tvar l_gmrsl = GMain.i_getInstance().i_getPreloadingController().i_getResourcesLoader();",
+				"\tvar l_udo = this._f${1:AssetView}_udo = new ULoader(l_gmrsl.i_get${1:AssetView}ImgURL(), false, null, l_gmrsl).i_getContent();",
+				"\tl_udo.i_alignLocalBoundsCM();",
+				"\tl_udo.i_setAdditiveBlendingMode();",
+				"\tl_udo.i_setXY(0, 0);",
+				"\tl_udo.i_setScale(1);",
+				"\tl_udo.i_setAlpha(1);",
+				"\tl_udo.i_setRotationInDegrees(0);",
+				"",
+				"\treturn l_udo;",
+			"}"
+		],
+		"description": "Create UDisplayObject via ULoader"
+	},
+}
