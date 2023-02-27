@@ -24,7 +24,7 @@
 				"\treturn l_gut;",
 			"}"
 		],
-		"description": "Create empty GUTimeline"
+		"description": "Create GUTimeline"
 	},
 
 	"init/get GUTimeline with completion event handler": {
@@ -56,7 +56,7 @@
 			"\t",
 			"}"
 		],
-		"description": "Create empty GUTimeline with event listener on timeline completion"
+		"description": "Create GUTimeline with event listener on timeline completion"
 	},
 
 	"scale timeline animation": {
@@ -85,6 +85,20 @@
 		");",
 		],
 		"description": "Create scaleX animation inside GUTimeline"
+	},
+
+	"scaleY timeline animation": {
+		"scope": "javascript",
+		"prefix": "sya",
+		"body": [
+		"l_gut.i_addAnimation(${1:l_udo}, GUTimeline.i_SET_SCALE_Y, 1,",
+			"\t[",
+				"\t\t1,",
+				"\t\t[2, 1, GUTimeline.i_EASE_IN_OUT]",
+			"\t]",
+		");",
+		],
+		"description": "Create scaleY animation inside GUTimeline"
 	},
 
 	"scaleXY timeline animation": {
@@ -131,7 +145,7 @@
 
 	"y timeline animation": {
 		"scope": "javascript",
-		"prefix": "xa",
+		"prefix": "ya",
 		"body": [
 		"l_gut.i_addAnimation(${1:l_udo}, GUTimeline.i_SET_Y, 1,",
 			"\t[",
@@ -236,7 +250,7 @@
 		"description": "Create USimpleTimer"
 	},
 
-	"init/get USimpleTween": {
+	"init/get UTween": {
 		"scope": "javascript",
 		"prefix": "ut",
 		"body": [
