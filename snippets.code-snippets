@@ -18,10 +18,11 @@
 				"\t/*...debug_code_block_to_be_removed_by_release_builder*/",
 				"",
 				"\tvar l_gut = this._f${1:Animation}Timeline_gut = new GUTimeline();",
-				"\tl_gut.i_addEventListener(GUTimeline.i_EVENT_ANIMATION_COMPLETED, this._onAnimationCompleted.i_toEventlessHandler(this));",
 				"\tl_gut.i_callHandlerAtTime(0, this._someHandler.i_toObjectMethod(this));",
 				"",
 				"\treturn l_gut;",
+				"\t$BLOCK_COMMENT_START Move the following import to the IL DEPENDENCIES section if needed $BLOCK_COMMENT_END",
+				"\t$BLOCK_COMMENT_START var GUTimeline = module_ns.gunified_ns.g_extensions_ns.view_ns.tools_ns.i_importGUTimelineClass(); $BLOCK_COMMENT_END",
 			"}"
 		],
 		"description": "Create GUTimeline"
@@ -50,6 +51,8 @@
 				"\tl_gut.i_callHandlerAtTime(0, this._someHandler.i_toObjectMethod(this));",
 				"",
 				"\treturn l_gut;",
+				"\t$BLOCK_COMMENT_START Move the following import to the IL DEPENDENCIES section if needed $BLOCK_COMMENT_END",
+				"\t$BLOCK_COMMENT_START var GUTimeline = module_ns.gunified_ns.g_extensions_ns.view_ns.tools_ns.i_importGUTimelineClass(); $BLOCK_COMMENT_END",
 			"}",
 			"\\$(\\$private).__onAnimationCompleted = function ()",
 			"{",
@@ -235,6 +238,8 @@
 				"\tl_ust.i_addEventListener(USimpleTimer.i_EVENT_COMPLETED, this._on${1:Animation}TimerCompleted.i_toEventlessHandler(this));",
 				"\tl_ust.i_addEventListener(USimpleTimer.i_EVENT_TICK, this._on${1:Animation}TimerTick.i_toEventHandler(this));",
 				"\treturn l_ust;",
+				"\t$BLOCK_COMMENT_START Move the following import to the IL DEPENDENCIES section if needed $BLOCK_COMMENT_END",
+				"\t$BLOCK_COMMENT_START var USimpleTimer = module_ns.unified_ns.controller_ns.time_ns.i_importUSimpleTimerClass(); $BLOCK_COMMENT_END",
 			"}",
 			"",
 			"\\$(\\$private)._on${1:Animation}TimerCompleted = function ()",
@@ -271,6 +276,9 @@
 				"\tvar l_ut = this._f${1:Animation}Tween_ut = new UTween(this._someReciever.i_toObjectMethod(this), UTween.i_LINEAR, 0, 1, 30 / 30, this.i_getCStage().i_getFrameEnteringTimer());",
 				"\tl_ut.i_addEventListener(UTween.i_EVENT_TWEENING_COMPLETED, this._on${1:Animation}TweenCompleted.i_toEventHandler(this));",
 				"\treturn l_ut;",
+				"\t$BLOCK_COMMENT_START Move the following import to the IL DEPENDENCIES section if needed $BLOCK_COMMENT_END",
+				"\t$BLOCK_COMMENT_START var UTween = module_ns.unified_ns.controller_ns.base_ns.transitions_ns.i_importUTweenClass(); $BLOCK_COMMENT_END",
+				
 			"}",
 			"",
 			"\\$(\\$private)._on${1:Animation}TweenCompleted = function ()",
@@ -309,8 +317,22 @@
 				"\tl_udo.i_setRotationInDegrees(0);",
 				"",
 				"\treturn l_udo;",
+				"\t$BLOCK_COMMENT_START Move the following import to the IL DEPENDENCIES section if needed $BLOCK_COMMENT_END",
+				"\t$BLOCK_COMMENT_START var ULoader = module_ns.unified_ns.view_ns.base_ns.display_ns.i_importULoaderClass(); $BLOCK_COMMENT_END",
 			"}"
 		],
 		"description": "Create UDisplayObject via ULoader"
 	},
+
+	"get some class": {
+		"scope": "javascript",
+		"prefix": "gsc",
+		"body": [
+			"\\$(\\$private)._get${1:MyClass} = function ()",
+			"{",
+				"\treturn this._f${1}${2:_suffix} || (this${3:._fContainer_udoc}.i_addChild(this._f${1}${2:_suffix} = new G${1:GMyClass}()));",
+			"}"
+		],
+		"description": "one line getter for classes"
+	}
 }
