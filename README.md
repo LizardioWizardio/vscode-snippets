@@ -16,7 +16,7 @@
 
 `guqa:`
 
-![guqa](./examples/ust.jpg)
+![guqa](./examples/guqa.jpg)
 
 `udo:`
 
