@@ -23,6 +23,11 @@
 				"\treturn l_gut;",
 				"\t$BLOCK_COMMENT_START Move the following import to the IL DEPENDENCIES section if needed $BLOCK_COMMENT_END",
 				"\t$BLOCK_COMMENT_START var GUTimeline = module_ns.gunified_ns.g_extensions_ns.view_ns.tools_ns.i_importGUTimelineClass(); $BLOCK_COMMENT_END",
+			"}",
+			"",
+			"\\$(\\$private)._someHandler = function ()",
+			"{",
+			"\t",
 			"}"
 		],
 		"description": "Create GUTimeline"
@@ -54,7 +59,13 @@
 				"\t$BLOCK_COMMENT_START Move the following import to the IL DEPENDENCIES section if needed $BLOCK_COMMENT_END",
 				"\t$BLOCK_COMMENT_START var GUTimeline = module_ns.gunified_ns.g_extensions_ns.view_ns.tools_ns.i_importGUTimelineClass(); $BLOCK_COMMENT_END",
 			"}",
-			"\\$(\\$private).__onAnimationCompleted = function ()",
+			"",
+			"\\$(\\$private)._onAnimationCompleted = function ()",
+			"{",
+			"\t",
+			"}",
+			"",
+			"\\$(\\$private)._someHandler = function ()",
 			"{",
 			"\t",
 			"}"
@@ -234,7 +245,7 @@
 				"\t}",
 				"\t/*...debug_code_block_to_be_removed_by_release_builder*/",
 				"",
-				"\tvar l_ust = this._f${1:Animation}Timer_ust = new USimpleTimer(Interval_num, TicksCount_int, OptAutoStart_bl, this.i_getCStage().i_getFrameEnteringTimer(), true);",
+				"\tvar l_ust = this._f${1:Animation}Timer_ust = new USimpleTimer(1 / 30, 10, false, this.i_getCStage().i_getFrameEnteringTimer(), true);",
 				"\tl_ust.i_addEventListener(USimpleTimer.i_EVENT_COMPLETED, this._on${1:Animation}TimerCompleted.i_toEventlessHandler(this));",
 				"\tl_ust.i_addEventListener(USimpleTimer.i_EVENT_TICK, this._on${1:Animation}TimerTick.i_toEventHandler(this));",
 				"\treturn l_ust;",
@@ -249,7 +260,8 @@
 			"",
 			"\\$(\\$private)._on${1:Animation}TimerTick = function (aEvent_ue)",
 			"{",
-				"\tconsole.log(aEvent_ue.i_getEventDispatcher().i_getElapsedTicksCount())",
+				"\tvar lTicksCount_int = aEvent_ue.i_getEventDispatcher().i_getElapsedTicksCount();",
+				"\tconsole.log(lTicksCount_int)",
 			"}"
 		],
 		"description": "Create USimpleTimer"
@@ -319,6 +331,7 @@
 				"\treturn l_udo;",
 				"\t$BLOCK_COMMENT_START Move the following import to the IL DEPENDENCIES section if needed $BLOCK_COMMENT_END",
 				"\t$BLOCK_COMMENT_START var ULoader = module_ns.unified_ns.view_ns.base_ns.display_ns.i_importULoaderClass(); $BLOCK_COMMENT_END",
+				"\t$BLOCK_COMMENT_START var GMain = module_ns.controller_ns.main_ns.i_importGMainClass(); $BLOCK_COMMENT_END",
 			"}"
 		],
 		"description": "Create UDisplayObject via ULoader"
@@ -334,5 +347,46 @@
 			"}"
 		],
 		"description": "one line getter for classes"
+	},
+
+	"init/get GUQueueAnimation": {
+		"scope": "javascript",
+		"prefix": "guqa",
+		"body": [
+			"\\$(\\$private)._get${1:Animation}Queue = function ()",
+			"{",
+				"\treturn this._f${1:Animation}Queue_guqa || this._init${1:Animation}Queue();",
+			"}",
+			"",
+			"\\$(\\$private)._init${1:Animation}Queue = function ()",
+			"{",
+				"\t/*debug_code_block_to_be_removed_by_release_builder...*/",
+				"\tif (this._f${1:Animation}Queue_guqa)",
+				"\t{",
+					"\t\tthis.__throwException(\"Instance already exist!\", this._init${1:Animation}Queue);",
+				"\t}",
+				"\t/*...debug_code_block_to_be_removed_by_release_builder*/",
+				"",
+				"\tvar l_guqa = this._f${1:Animation}Queue_guqa = new GUQueueAnimation();",
+				"\tl_guqa.i_initReceiver(this.i_setScale.i_toObjectMethod(this));",
+				"\tl_guqa.i_callHandler(this._someHandler.i_toObjectMethod(this));",
+				"\tl_guqa.i_tweenValueTo(2, 5);",
+				"\tl_guqa.i_waitNextTween(5);",
+				"\tl_guqa.i_tweenValueTo(1, 5);",
+				"",
+				"\treturn l_guqa;",
+	
+	
+				"\t$BLOCK_COMMENT_START Move the following import to the IL DEPENDENCIES section if needed $BLOCK_COMMENT_END",
+				"\t$BLOCK_COMMENT_START var GUQueueAnimation = module_ns.gunified_ns.g_extensions_ns.view_ns.tools_ns.i_importGUQueueAnimationClass(); $BLOCK_COMMENT_END",
+				
+			"}",
+			"",
+			"\\$(\\$private)._someHandler = function ()",
+			"{",
+				"\t",
+			"}"
+		],
+		"description": "Create GUQueueAnimation"
 	}
 }
