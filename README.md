@@ -7,12 +7,12 @@ $($private)._getAnimationTimeline = function ()
 
 $($private)._initAnimationTimeline = function ()
 {
-    /*debug_code_block_to_be_removed_by_release_builder...*/
+    /*dcb...*/
     if (this._fAnimationTimeline_gut)
     {
         this.__throwException("Instance already exist!", this._initAnimationTimeline);
     }
-    /*...debug_code_block_to_be_removed_by_release_builder*/
+    /*...dcb*/
 
     var l_gut = this._fAnimationTimeline_gut = new GUTimeline();
     l_gut.i_callHandlerAtTime(0, this._someHandler.i_toObjectMethod(this));
@@ -38,12 +38,12 @@ $($private)._getAnimationTimeline = function ()
 
 $($private)._initAnimationTimeline = function ()
 {
-    /*debug_code_block_to_be_removed_by_release_builder...*/
+    /*dcb...*/
     if (this._fAnimationTimeline_gut)
     {
         this.__throwException("Instance already exist!", this._initAnimationTimeline);
     }
-    /*...debug_code_block_to_be_removed_by_release_builder*/
+    /*...dcb*/
 
     var l_gut = this._fAnimationTimeline_gut = new GUTimeline();
     l_gut.i_addEventListener(GUTimeline.i_EVENT_ANIMATION_COMPLETED, this._onAnimationCompleted.i_toEventlessHandler(this));
@@ -75,12 +75,12 @@ $($private)._getAnimationTimer = function ()
 
 $($private)._initAnimationTimer = function ()
 {
-    /*debug_code_block_to_be_removed_by_release_builder...*/
+    /*dcb...*/
     if (this._fAnimationTimer_ust)
     {
         this.__throwException("Instance already exist!", this._initAnimationTimer);
     }
-    /*...debug_code_block_to_be_removed_by_release_builder*/
+    /*...dcb*/
 
     var l_ust = this._fAnimationTimer_ust = new USimpleTimer(1 / 30, 10, false, this.i_getCStage().i_getFrameEnteringTimer(), true);
     l_ust.i_addEventListener(USimpleTimer.i_EVENT_COMPLETED, this._onAnimationTimerCompleted.i_toEventlessHandler(this));
@@ -112,12 +112,12 @@ $($private)._getAnimationTween = function ()
 
 $($private)._initAnimationTween = function ()
 {
-    /*debug_code_block_to_be_removed_by_release_builder...*/
+    /*dcb...*/
     if (this._fAnimationTween_ut)
     {
         this.__throwException("Instance already exist!", this._initAnimationTween);
     }
-    /*...debug_code_block_to_be_removed_by_release_builder*/
+    /*...dcb*/
 
     var l_ut = this._fAnimationTween_ut = new UTween(this._someReciever.i_toObjectMethod(this), UTween.i_LINEAR, 0, 1, 30 / 30, this.i_getCStage().i_getFrameEnteringTimer());
     l_ut.i_addEventListener(UTween.i_EVENT_TWEENING_COMPLETED, this._onAnimationTweenCompleted.i_toEventHandler(this));
@@ -142,12 +142,12 @@ $($private)._getAnimationQueue = function ()
 
 $($private)._initAnimationQueue = function ()
 {
-    /*debug_code_block_to_be_removed_by_release_builder...*/
+    /*dcb...*/
     if (this._fAnimationQueue_guqa)
     {
         this.__throwException("Instance already exist!", this._initAnimationQueue);
     }
-    /*...debug_code_block_to_be_removed_by_release_builder*/
+    /*...dcb*/
 
     var l_guqa = this._fAnimationQueue_guqa = new GUQueueAnimation();
     l_guqa.i_initReceiver(this.i_setScale.i_toObjectMethod(this));
@@ -177,12 +177,12 @@ $($private)._getAssetView = function ()
 
 $($private)._initAssetView = function ()
 {
-    /*debug_code_block_to_be_removed_by_release_builder...*/
+    /*dcb...*/
     if (this._fAssetView_udo)
     {
         this.__throwException("Instance already exist!", this._initAssetView);
     }
-    /*...debug_code_block_to_be_removed_by_release_builder*/
+    /*...dcb*/
 
     var l_gmrsl = GMain.i_getInstance().i_getPreloadingController().i_getResourcesLoader();
     var l_udo = this._fAssetView_udo = new ULoader(l_gmrsl.i_getAssetViewImgURL(), false, null, l_gmrsl).i_getContent();
